@@ -1,3 +1,4 @@
+import java.util.ArrayList
 /*
 Brute force solution
 1) convert both strings to character arrays
@@ -17,4 +18,20 @@ public boolean isStringPermutation(String s1, String s2) {
       }
     }
   return false;
+}
+
+/*
+Brute Force 
+1) two-for loops to find pair that equals to target sum
+*/
+
+public Array<Int, Int> pairsThatEqualSum (Array<Int> inputArray, Int targetSum) {
+    for (int i=0; i<inputArray.length; i++) {
+        for (j= i+1; j<inputArray.length; j++) {
+            if (targetSum - inputArray[i] == inputArray[j]) {
+                
+            }
+        }
+    }
+    
 }
