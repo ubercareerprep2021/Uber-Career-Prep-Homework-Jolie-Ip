@@ -1,4 +1,4 @@
-import java.util.ArrayList
+import java.util.ArrayList;
 /*
 Brute force solution
 1) convert both strings to character arrays
@@ -23,15 +23,25 @@ public boolean isStringPermutation(String s1, String s2) {
 /*
 Brute Force 
 1) two-for loops to find pair that equals to target sum
+O(n^2)
 */
 
-public Array<Int, Int> pairsThatEqualSum (Array<Int> inputArray, Int targetSum) {
+public class helloworld{
+    
+    public static ArrayList<Integer> pairsThatEqualSum (int[] inputArray, int targetSum) {
+       ArrayList<Integer> sumElements = new ArrayList<Integer>();
     for (int i=0; i<inputArray.length; i++) {
-        for (j= i+1; j<inputArray.length; j++) {
+        for (int j= i+1; j<inputArray.length; j++) {
             if (targetSum - inputArray[i] == inputArray[j]) {
+                
+                sumElements.add(inputArray[i]);
+                sumElements.add(inputArray[j]);
+               
                 
             }
         }
     }
+	return sumElements;
     
+    } 
 }
