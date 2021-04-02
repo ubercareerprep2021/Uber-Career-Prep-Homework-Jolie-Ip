@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+
 /*
 Brute force solution
 1) convert both strings to character arrays
@@ -19,6 +21,62 @@ public boolean isStringPermutation(String s1, String s2) {
     }
   return false;
 }
+
+/*
+Second Approach
+sort the arrays and compare if the characters are identical
+O(nlog(n))
+*/
+   public static boolean isStringPermutation(String s1, String s2) {
+    	char[] str1 = s1.toCharArray();
+        char[] str2 = s2.toCharArray();
+    	
+    	for (int i=0; i<s1.length(); i++) {
+    		Arrays.sort(str1);
+    		Arrays.sort(str2);
+    		return Arrays.equals(str1,str2);
+    	}
+    	
+    	return false;
+    }
+
+/*
+Optimized solution
+HashMap implementation
+O(n)
+*/
+public static boolean isStringPermutation(String s1, String s2) {
+	HashMap<Integer, Character> isSame1 = new HashMap<Integer, Character>();
+	HashMap<Integer, Character> isSame2 = new HashMap<Integer, Character>();
+	char[] str1 = s1.toCharArray();
+        char[] str2 = s2.toCharArray();
+	int count =0;
+    	
+	for (int i=0; i<s1.length(); i++) {
+		if (!isSame1.containsValue(str1[i])) {
+			isSame1.put(i, str1[i]);
+		}
+	}
+	
+	for (int i=0; i<s2.length(); i++) {
+		if (!isSame2.containsValue(str2[i])) {
+			isSame2.put(i, str2[i]);
+		}
+	}
+	
+	for (int i=0; i<s1.length(); i++) {
+		if(isSame2.containsValue(str1[i])) {
+			count++;
+		}
+	}
+	
+	if (count == s1.length() && s1.length() == s2.length()) {
+		return true;}
+	
+	return false;
+	
+}
+
 
 /*
 Brute Force 
