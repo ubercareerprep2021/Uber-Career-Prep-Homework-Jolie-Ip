@@ -84,21 +84,50 @@ Brute Force
 O(n^2)
 */
 
-    public static ArrayList<Integer> pairsThatEqualSum (int[] inputArray, int targetSum) {
-       ArrayList<Integer> sumElements = new ArrayList<Integer>();
-    for (int i=0; i<inputArray.length; i++) {
-        for (int j= i+1; j<inputArray.length; j++) {
-            if (targetSum - inputArray[i] == inputArray[j]) {
-                
-                sumElements.add(inputArray[i]);
-                sumElements.add(inputArray[j]);
-               
-                
+   public ArrayList <Pair <Integer,Integer>>  pairsThatEqualSum(int[] inputArray, int targetSum) {
+    
+    	ArrayList <Pair <Integer,Integer> > thepairs =
+                new ArrayList <Pair <Integer,Integer> > ();
+    	for (int i=0; i<inputArray.length; i++) {
+            for (int j= i+1; j<inputArray.length; j++) {
+                if (targetSum - inputArray[i] == inputArray[j]) {
+                    
+                    thepairs.add(new Pair <Integer, Integer>(inputArray[i], inputArray[j]));
+                   
+                    
+                }
             }
         }
+    	return thepairs;
     }
-	return sumElements;
-    
-   } 
 
+
+/*
+Optimized solution
+O(nlogn)
+*/
+
+ public ArrayList <Pair <Integer,Integer>>  pairsThatEqualSum(int[] inputArray, int targetSum) {
+    
+    	ArrayList <Pair <Integer,Integer> > thepairs = new ArrayList <Pair <Integer,Integer> > ();
+    	int start =0;
+	int end = inputArray.length -1;
+        Arrays.sort(inputArray);
+         while (start<end) {
+	 if (targetSum - inputArray[end] == inputArray[start]) {
+			
+                    thepairs.add(new Pair <Integer, Integer>(inputArray[start], inputArray[end]));
+                  
+        	}
+		 
+	else if (inputArray[start] + inputArray[end] < targetSum) {
+		start++;
+	}
+		 
+	else if (inputArray[start] + inputArray[end] > targetSum) {
+		end--;
+	}
+	 }
+    	return thepairs;
+    }
 
