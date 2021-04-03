@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.javatuples.Pair;
 
 /*
 Brute force solution
