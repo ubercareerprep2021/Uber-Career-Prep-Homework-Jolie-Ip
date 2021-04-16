@@ -30,11 +30,6 @@ public class thisStack {
     public int size(){
         return index + 1;
     }
-
-    
-
-
-    public sta
     
     
     // Queue class 
