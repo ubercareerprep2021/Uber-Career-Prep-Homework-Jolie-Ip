@@ -1,27 +1,25 @@
 public class thisStack {
     int size;
-    int[] elements;
+    ArrayList<Integer> elements;
     int index;
   
-    public thisStack(int a) {
-        size = a;
-        elements = new int [size];
+    public thisStack() {
         index = -1;
-    
+        elements= new ArrayList<Integer>();
     }
 
     public void push(int b){
         index++;
-        elements[index] = b;
+        elements.add(b);
     }
   
     public int pop(){
-        return elements[index--];
+        return elements.remove(index--);
         
     }
   
     public int top(){
-        return elements[index];
+        return elements.get(index);
     }
 
     public boolean isEmpty(){
@@ -34,36 +32,40 @@ public class thisStack {
     }
 
     
+
+
+    public sta
+    
     
     // Queue class 
 public class thisQueue{
-    int[] numbers;
+    ArrayList<Integer> numbers;
     int size;
     int count;
     int start;
     
-    public thisQueue(int a){
-        size = a;
-        numbers = new int[size];
+    public thisQueue(){
+        
+        numbers = new ArrayList<Integer>();
         count = -1;
         start=0;
     }
     
     public void enqueue(int b){
         count++;
-        numbers[count]= b;
+        numbers.add(b);
     }
     
     public int dequeue(){
         count--;
-        return numbers[start++];
+        return numbers.remove(start);
     }
     public int rear(){
-        return numbers[count];
+        return numbers.get(count);
     }
     
     public int front(){
-        return numbers[start];
+        return numbers.get(start);
     }
     
     public int size(){
@@ -74,6 +76,5 @@ public class thisQueue{
     public boolean isEmpty(){
         if (count <= -1) return true;
         else return false;
-    }
 
     
