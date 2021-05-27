@@ -20,7 +20,7 @@ class Trees {
   
     public static void print(TreeNode nodeA) {
 
-        System.out.print(nodeA.data);
+        System.out.print(nodeA.data + " ");
 
         if (nodeA.left != null) {
             print(nodeA.left);
@@ -41,6 +41,8 @@ class Trees {
       TreeNode root = new TreeNode(1, left, right);
       Tree tree = new Tree(root);
       print(tree.root); 
+      // result: 1 7 17 6 3
+
   
     }
   }
