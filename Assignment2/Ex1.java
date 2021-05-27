@@ -18,7 +18,7 @@ class Trees {
       }
     }
   
-    public static void print(Tree nodeA) {
+    public static void print(TreeNode nodeA) {
 
         System.out.print(nodeA.data);
 
@@ -40,7 +40,7 @@ class Trees {
       TreeNode right = new TreeNode(17, leftChild, rightChild);
       TreeNode root = new TreeNode(1, left, right);
       Tree tree = new Tree(root);
-      print(tree); 
+      print(tree.root); 
   
     }
   }
